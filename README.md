@@ -114,12 +114,16 @@ wget -N --no-check-certificate https://www.moerats.com/usr/shell/Caddy/caddy_ins
 * 重新写入配置到 Caddy 配置文件，注意下面这五行要一起复制粘贴！toyoo.pw 改成你自己的域名，然后去域名托管商解析你的域名即可
 * 以下全部内容是一个整体，是一个命令，全部复制粘贴到SSH软件中并一起执行！
 `echo "http://toyoo.pw {
+
   root /usr/local/caddy/www
+  
  browse /Download
+ 
   timeouts none
+  
   gzip
-}" > /usr/local/caddy/Caddyfile
-`
+  
+}" > /usr/local/caddy/Caddyfile`
 
 ## CentOS 系统：
 `yum install unzip -y`
