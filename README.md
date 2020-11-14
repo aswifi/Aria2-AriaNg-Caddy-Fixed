@@ -95,35 +95,30 @@ RPC 密钥：随机生成，可使用选项`7. 修改 配置文件`自定义
 
 ## 2.Install CaddyServer (Powered by doubi)
 # CaddyServer一键安装脚本：
-`wget -N --no-check-certificate https://raw.githubusercontent.com/iiiiiii1/doubi/master/caddy_install.sh && chmod +x caddy_install.sh && bash caddy_install.sh
+`wget -N --no-check-certificate https://raw.githubusercontent.com/iiiiiii1/doubi/master/caddy_install.sh && chmod +x caddy_install.sh && bash caddy_install.sh`
 * 备用地址
-wget -N --no-check-certificate https://www.moerats.com/usr/shell/Caddy/caddy_install.sh && chmod +x caddy_install.sh && bash caddy_install.sh
-`
+`wget -N --no-check-certificate https://www.moerats.com/usr/shell/Caddy/caddy_install.sh && chmod +x caddy_install.sh && bash caddy_install.sh`
+
 ## 安装Caddy成功后，继续新建一个虚拟主机文件夹
 `mkdir /usr/local/caddy/www`
 
 ## 使用IP进行访问：
-`echo ":80 {
- root /usr/local/caddy/www
- browse /Download
- timeouts none
- gzip
-}" > /usr/local/caddy/Caddyfile`
+`echo ":80 {`
+`root /usr/local/caddy/www`
+`browse /Download`
+`timeouts none`
+`gzip`
+`}" > /usr/local/caddy/Caddyfile`
 
 ## 绑定指定域名：
 * 重新写入配置到 Caddy 配置文件，注意下面这五行要一起复制粘贴！toyoo.pw 改成你自己的域名，然后去域名托管商解析你的域名即可
 * 以下全部内容是一个整体，是一个命令，全部复制粘贴到SSH软件中并一起执行！
-`echo "http://toyoo.pw {
-
-  root /usr/local/caddy/www
-  
- browse /Download
- 
-  timeouts none
-  
-  gzip
-  
-}" > /usr/local/caddy/Caddyfile`
+`echo "http://toyoo.pw {`
+`root /usr/local/caddy/www`
+`browse /Download`
+`timeouts none`
+`gzip`
+`}" > /usr/local/caddy/Caddyfile`
 
 ## CentOS 系统：
 `yum install unzip -y`
