@@ -144,7 +144,8 @@ gzip
 
 `wget -N --no-check-certificate "https://github.com/mayswind/AriaNg/releases/download/${Ver}/AriaNg-${Ver}.zip" && unzip AriaNg-${Ver}.zip && rm -rf AriaNg-${Ver}.zip`
  
-# 赋予虚拟主机文件夹权限
+* 赋予虚拟主机文件夹权限
+
 `chmod -R 755 /usr/local/caddy/www/`
 
 ## 最后启动Caddy
