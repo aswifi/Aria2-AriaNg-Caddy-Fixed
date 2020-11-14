@@ -113,9 +113,10 @@ gzip
 }" > /usr/local/caddy/Caddyfile`
 
 ## 绑定指定域名：
-* 重新写入配置到 Caddy 配置文件，注意下面这五行要一起复制粘贴！toyoo.pw 改成你自己的域名，然后去域名托管商解析你的域名即可
+* 重新写入配置到 Caddy 配置文件，注意下面这五行要一起复制粘贴！xxx.xxx 改成你自己的域名，然后去域名托管商解析你的域名即可
 * 以下全部内容是一个整体，是一个命令，全部复制粘贴到SSH软件中并一起执行！
-`echo "http://toyoo.pw {
+
+`echo "http://xxx.xxx {
 root /usr/local/caddy/www
 browse /Download
 timeouts none
