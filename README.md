@@ -1,40 +1,11 @@
-# Aria2 一键安装管理脚本 增强版
+# Aria2 一键安装管理脚本 增强版(forked from P3TERX/aria2.sh) ＋ Install CaddyServer
 
+# 1.P3TERX/aria2.sh
 [![LICENSE](https://img.shields.io/github/license/P3TERX/aria2.sh?style=flat-square)](https://github.com/P3TERX/aria2.sh/blob/master/LICENSE)
 [![GitHub Stars](https://img.shields.io/github/stars/P3TERX/aria2.sh.svg?style=flat-square&label=Stars&logo=github)](https://github.com/P3TERX/aria2.sh/stargazers)
 [![GitHub Forks](https://img.shields.io/github/forks/P3TERX/aria2.sh.svg?style=flat-square&label=Forks&logo=github)](https://github.com/P3TERX/aria2.sh/fork)
 
 Aria2 是目前最强大的全能型下载工具，它支持 BT、磁力、HTTP、FTP 等下载协议，常用做离线下载的服务端。Aria2 一键安装管理脚本是 Toyo (逗比) 大佬最为知名的脚本作品之一，2018年11月14日逗比大佬因未知原因突然失联。由于博主非常喜欢 Aria2 所以自2018年12月7日起开始接手这个项目并进行了大量的功能与细节优化，一直持续维护至今。增强版脚本整合了 [Aria2 完美配置](https://github.com/P3TERX/aria2.conf)，在安装 Aria2 的过程中会下载这套配置方案，这套方案包含了配置文件、附加功能脚本等文件，用于实现 Aria2 功能的增强和扩展，提升 Aria2 的下载速度与使用体验，解决 Aria2 在使用中遇到的 BT 下载无速度、文件残留占用磁盘空间、任务丢失、重复下载等问题。
-
-## 功能特性
-
-- 使用 [Aria2 完美配置](https://github.com/P3TERX/aria2.conf)方案
-    * BT 下载率高、速度快
-    * 重启后不丢失任务进度、不重复下载
-    * 删除正在下载的任务自动删除未完成的文件
-    * 下载错误自动删除未完成的文件
-    * 下载完成自动删除控制文件(`.aria2`后缀名文件)
-    * 下载完成自动删除种子文件(`.torrent`后缀名文件)
-    * 下载完成自动删除空目录
-    * BT 下载完成自动清除垃圾文件(文件类型过滤功能)
-    * BT 下载完成自动清除小文件(文件大小过滤功能)
-    * 有一定的防版权投诉、防迅雷吸血效果
-    * 更好的 PT 下载支持
-
-- 使用 [aria2-builder](https://github.com/P3TERX/aria2-builder) 项目最新静态编译二进制文件
-    - 多平台：`amd64`, `i386`, `arm64`, `armhf`
-    - 全功能：`Async DNS`, `BitTorrent`, `Firefox3 Cookie`, `GZip`, `HTTPS`, `Message Digest`, `Metalink`, `XML-RPC`, `SFTP`
-    - 单服务器线程数最大值无上限（已破解线程数限制）
-    - 防掉线程优化
-    - 最新依赖库，下载更安全、稳定、快速
-    - 持续更新最新版本
-
-- 支持与 [RCLONE](https://rclone.org/) 联动，更多扩展功能与玩法：
-    - [OneDrive、Google Drive 等网盘离线下载](https://p3terx.com/archives/offline-download-of-onedrive-gdrive.html)
-    - [百度网盘转存到 OneDrive 、Google Drive 等其他网盘](https://p3terx.com/archives/baidunetdisk-transfer-to-onedrive-and-google-drive.html)
-
-- 支持新一代互联网协议 IPv6
-- 定时自动更新 BT tracker 列表（无需重启）
 
 ## 项目地址
 
@@ -117,118 +88,68 @@ RPC 密钥：随机生成，可使用选项`7. 修改 配置文件`自定义
 
 遇到问题先看 [FAQ](https://p3terx.com/archives/aria2_perfect_config-faq.html) 再提问，你还可以加入 [Aria2 TG 群](https://t.me/Aria2c)和小伙伴们一起讨论。要注意提问的方式和提供有用的信息，提问前建议去学习《[提问的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/master/README-zh_CN.md)》，这能更好的帮助你去解决问题和节约时间。诸如 “为什么不能使用？”、“那你能帮帮我吗？” 之类的问题应该没有人会知道。
 
-## 更新日志
-
-更新推送：[Aria2 Channel](https://t.me/Aria2_Channel)
-
-### 2020-08-15 v2.7.0
-
-- 新增 AriaNg 链接功能
-
-### 2020-08-09 v2.6.2
-
-- 修改 资源下载链接
-- 优化 IP检测接口
-
-### 2020-07-12 v2.6.0
-
-- 适配新版 [Aria2 完美配置](https://github.com/P3TERX/aria2.conf)
-- 移除 Aria2 版本选择功能
-
-<details>
-<summary>历史记录</summary>
-
-### 2020-06-27 v2.5.3
-
-- 同步 Aria2 完美配置文件名改动
-- 安装过程优化
-- 修复 bug
-
-### 2020-05-21 v2.5.0
-
-- 解决 CLI 下`aria2c`无法直接下载的问题
-- 修改配置目录为`/root/.aria2c`
-- 修改下载目录为`/root/downloads`
-
-### 2020-05-20 v2.4.5
-
-- 新增自动更新 BT Tracker 状态显示
-- 改进脚本升级策略
-- 优化文案细节
-- 修复部分历史遗留 bug
-
-### 2020-05-17 v2.3.0
-
-- 优化 中国大陆“局域网”环境下的安装体验
-
-### 2020-05-09 v2.2.5
-
-- 新增 IPv6 地址检测功能
-- 优化防火墙设置，自动开放必要的端口。
-- 修复部分历史遗留 bug
-
-### 2020-04-14 v2.2.1
-
-- 优化 BT Tracker 列表更新策略，以无重启方式进行（**自动更新 BT Tracker** 功能需重新进行设置）
-- 优化代码细节，修复部分历史遗留 bug
-
-### 2020-02-18 v2.2.0
-
-- 更换静态编译二进制文件下载来源（[P3TERX/aria2-builder](https://github.com/P3TERX/aria2-builder)）
-- 适配 ARM64、ARM32v7、ARM32v6 架构。
-- 优化文案细节。
-
-### 2020-02-17 v2.1.0
-
-- 适配新版 [Aria2 完美配置](https://github.com/P3TERX/aria2.conf)
-- 分离 trackers 更新功能
-- 优化功能，完善细节，修复若干 bug
-
-### 2019-11-23 v2.0.8
-
-- 修改 Trackers 来源([XIU2/TrackersListCollection](https://github.com/XIU2/TrackersListCollection))
-
-### 2019-10-12 v2.0.7
-
-- 修复 Aria2 版本更新时因未获取 CPU 架构导致版本下载错误且无法启动的 bug
-
-### 2019-09-30 v2.0.6
-
-- 获取 DHT（IPv6）文件
-
-### 2019-06-08 v2.0.5
-
-- 增加 清空日志 功能
-- 调整 部分文案
-
-### 2018-12-25 v2.0.4
-
-- 优化调整
-
-### 2018-12-24 v2.0.3
-
-- 增加 重置/更新 Aria2 完美配置 选项
-- 优化 修改配置文件下载路径时同步修改附加功能脚本中的下载路径
-
-### 2018-12-8 v2.0.2
-
-- 修复 附加功能脚本没有执行权限的 bug
-
-### 2018-12-7 v2.0.1
-
-- 修复 设置下载文件夹提示不存在的 bug
-- 解锁 更新 BT-Tracker服务器 选项
-
-### 2018-12-7 v2.0.0α
-
-- 整合 [Aria2 完美配置](https://github.com/P3TERX/aria2_perfect_config)
-
-### 2018-10-18 v1.1.10
-
-- 取自[一个逗比写的逗比脚本](https://github.com/P3TERX/doubi_backup)
-- 感谢 Toyo 大佬
-
 </details>
 
 ## Lisence
 [MIT](https://github.com/P3TERX/aria2.sh/blob/master/LICENSE) © Toyo x P3TERX
+
+## 2.Install CaddyServer (Powered by doubi)
+## CaddyServer一键安装脚本：
+wget -N --no-check-certificate https://raw.githubusercontent.com/iiiiiii1/doubi/master/caddy_install.sh && chmod +x caddy_install.sh && bash caddy_install.sh
+#备用地址
+wget -N --no-check-certificate https://www.moerats.com/usr/shell/Caddy/caddy_install.sh && chmod +x caddy_install.sh && bash caddy_install.sh
+
+## 安装Caddy成功后，继续新建一个虚拟主机文件夹
+mkdir /usr/local/caddy/www
+
+## 使用IP进行访问：
+echo ":80 {
+ root /usr/local/caddy/www
+ browse /Download
+ timeouts none
+ gzip
+}" > /usr/local/caddy/Caddyfile
+
+## 绑定指定域名：
+## 重新写入配置到 Caddy 配置文件，注意下面这五行要一起复制粘贴！toyoo.pw 改成你自己的域名，然后去域名托管商解析你的域名即可
+## 以下全部内容是一个整体，是一个命令，全部复制粘贴到SSH软件中并一起执行！
+echo "http://toyoo.pw {
+  root /usr/local/caddy/www
+ browse /Download
+  timeouts none
+  gzip
+}" > /usr/local/caddy/Caddyfile
+
+## CentOS 系统：
+yum install unzip -y
+## Debian/Ubuntu 系统：
+apt-get install unzip -y
+然后继续：
+
+## 新建Aria2下载文件夹 并进入文件夹
+mkdir /usr/local/caddy/www/Download && cd /usr/local/caddy/www
+ 
+## 下载并解压 AriaNg 文件，这段代码会自动检测并下载最新版本
+Ver=$(wget --no-check-certificate -qO- https://api.github.com/repos/mayswind/AriaNg/releases/latest | grep -o '"tag_name": ".*"' | sed 's/"//g;s/tag_name: //g') && echo ${Ver}
+ 
+## 如果上面自动检测最新版本的代码返回空白或者错误，那么请访问 https://github.com/mayswind/AriaNg/releases/latest 来查看最新版本号。
+## 例如手动获取的版本号是 0.5.0，那么手动执行命令： Ver="0.5.0" ，然后继续下面步骤即可。
+ 
+wget -N --no-check-certificate "https://github.com/mayswind/AriaNg/releases/download/${Ver}/AriaNg-${Ver}.zip" && unzip AriaNg-${Ver}.zip && rm -rf AriaNg-${Ver}.zip
+ 
+## 赋予虚拟主机文件夹权限
+chmod -R 755 /usr/local/caddy/www/
+
+## 最后启动Caddy
+/etc/init.d/caddy start
+
+## Caddy其他命令：
+启动：/etc/init.d/caddy start
+停止：/etc/init.d/caddy stop
+重启：/etc/init.d/caddy restart
+查看状态：/etc/init.d/caddy status
+
+## Lisence
+moerats x doubi
+
+## 本项目由个人整理！！！
