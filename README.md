@@ -98,10 +98,10 @@ RPC 密钥：随机生成，可使用选项`7. 修改 配置文件`自定义
 wget -N --no-check-certificate https://raw.githubusercontent.com/iiiiiii1/doubi/master/caddy_install.sh && chmod +x caddy_install.sh && bash caddy_install.sh
 #备用地址
 wget -N --no-check-certificate https://www.moerats.com/usr/shell/Caddy/caddy_install.sh && chmod +x caddy_install.sh && bash caddy_install.sh
-
+```
 * 安装Caddy成功后，继续新建一个虚拟主机文件夹
 mkdir /usr/local/caddy/www
-
+``````
 * 使用IP进行访问：
 echo ":80 {
  root /usr/local/caddy/www
@@ -109,7 +109,7 @@ echo ":80 {
  timeouts none
  gzip
 }" > /usr/local/caddy/Caddyfile
-
+```
 * 绑定指定域名：
 * 重新写入配置到 Caddy 配置文件，注意下面这五行要一起复制粘贴！toyoo.pw 改成你自己的域名，然后去域名托管商解析你的域名即可
 * 以下全部内容是一个整体，是一个命令，全部复制粘贴到SSH软件中并一起执行！
@@ -119,30 +119,30 @@ echo "http://toyoo.pw {
   timeouts none
   gzip
 }" > /usr/local/caddy/Caddyfile
-
+```
 * CentOS 系统：
 yum install unzip -y
 * Debian/Ubuntu 系统：
 apt-get install unzip -y
-然后继续：
-
+```
+* 然后继续：
 * 新建Aria2下载文件夹 并进入文件夹
 mkdir /usr/local/caddy/www/Download && cd /usr/local/caddy/www
- 
+ ```
 * 下载并解压 AriaNg 文件，这段代码会自动检测并下载最新版本
 Ver=$(wget --no-check-certificate -qO- https://api.github.com/repos/mayswind/AriaNg/releases/latest | grep -o '"tag_name": ".*"' | sed 's/"//g;s/tag_name: //g') && echo ${Ver}
- 
+
 * 如果上面自动检测最新版本的代码返回空白或者错误，那么请访问 https://github.com/mayswind/AriaNg/releases/latest 来查看最新版本号。
 * 例如手动获取的版本号是 0.5.0，那么手动执行命令： Ver="0.5.0" ，然后继续下面步骤即可。
  
 wget -N --no-check-certificate "https://github.com/mayswind/AriaNg/releases/download/${Ver}/AriaNg-${Ver}.zip" && unzip AriaNg-${Ver}.zip && rm -rf AriaNg-${Ver}.zip
- 
+ ```
 * 赋予虚拟主机文件夹权限
 chmod -R 755 /usr/local/caddy/www/
-
-#* 最后启动Caddy
+```
+* 最后启动Caddy
 /etc/init.d/caddy start
-
+```
 * Caddy其他命令：
 启动：/etc/init.d/caddy start
 
@@ -151,7 +151,7 @@ chmod -R 755 /usr/local/caddy/www/
 重启：/etc/init.d/caddy restart
 
 查看状态：/etc/init.d/caddy status
-
+```
 ## Lisence
 moerats x doubi
 
