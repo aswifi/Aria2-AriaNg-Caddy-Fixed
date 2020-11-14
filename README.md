@@ -97,7 +97,7 @@ RPC 密钥：随机生成，可使用选项`7. 修改 配置文件`自定义
 # CaddyServer一键安装脚本：
 `wget -N --no-check-certificate https://raw.githubusercontent.com/iiiiiii1/doubi/master/caddy_install.sh && chmod +x caddy_install.sh && bash caddy_install.sh`
 
-* 备用地址
+* 备用地址：
 
 `wget -N --no-check-certificate https://www.moerats.com/usr/shell/Caddy/caddy_install.sh && chmod +x caddy_install.sh && bash caddy_install.sh`
 
