@@ -7,21 +7,21 @@
 
 Aria2 是目前最强大的全能型下载工具，它支持 BT、磁力、HTTP、FTP 等下载协议，常用做离线下载的服务端。Aria2 一键安装管理脚本是 Toyo (逗比) 大佬最为知名的脚本作品之一，2018年11月14日逗比大佬因未知原因突然失联。由于博主非常喜欢 Aria2 所以自2018年12月7日起开始接手这个项目并进行了大量的功能与细节优化，一直持续维护至今。增强版脚本整合了 [Aria2 完美配置](https://github.com/P3TERX/aria2.conf)，在安装 Aria2 的过程中会下载这套配置方案，这套方案包含了配置文件、附加功能脚本等文件，用于实现 Aria2 功能的增强和扩展，提升 Aria2 的下载速度与使用体验，解决 Aria2 在使用中遇到的 BT 下载无速度、文件残留占用磁盘空间、任务丢失、重复下载等问题。
 
-## 项目地址
+## 项目地址：
 
 https://github.com/P3TERX/aria2.sh
 
 支持项目请随手点个`star`，可以让更多的人发现、使用并受益。你的支持是我持续开发维护的动力。
 
-## 系统要求
+## 系统要求：
 
 CentOS 6+ / Debian 6+ / Ubuntu 14.04+
 
-## 架构支持
+## 架构支持：
 
 x86_64 / i386 / ARM64 / ARM32v7 / ARM32v6
 
-## 使用说明
+## 使用说明：
 
 * 为了确保能正常使用，请先安装基础组件`wget`、`curl`、`ca-certificates`，以 Debian 为例子：
 ```
@@ -68,7 +68,7 @@ wget -N git.io/aria2.sh && chmod +x aria2.sh
  请输入数字 [0-12]:
 ```
 
-## 其他操作
+## 其他操作：
 
 启动：`/etc/init.d/aria2 start` | `service aria2 start`
 
@@ -84,7 +84,7 @@ wget -N git.io/aria2.sh && chmod +x aria2.sh
 
 RPC 密钥：随机生成，可使用选项`7. 修改 配置文件`自定义
 
-## 遇到问题如何处理
+## 遇到问题如何处理：
 
 遇到问题先看 [FAQ](https://p3terx.com/archives/aria2_perfect_config-faq.html) 再提问，你还可以加入 [Aria2 TG 群](https://t.me/Aria2c)和小伙伴们一起讨论。要注意提问的方式和提供有用的信息，提问前建议去学习《[提问的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/master/README-zh_CN.md)》，这能更好的帮助你去解决问题和节约时间。诸如 “为什么不能使用？”、“那你能帮帮我吗？” 之类的问题应该没有人会知道。
 
@@ -93,7 +93,7 @@ RPC 密钥：随机生成，可使用选项`7. 修改 配置文件`自定义
 ## Lisence
 [MIT](https://github.com/P3TERX/aria2.sh/blob/master/LICENSE) © Toyo x P3TERX
 
-## 2.Install CaddyServer (Powered by doubi)
+  ## 2.Install CaddyServer + AriaNg (Powered by moerats x doubi)
 # CaddyServer一键安装脚本：
 `wget -N --no-check-certificate https://raw.githubusercontent.com/iiiiiii1/doubi/master/caddy_install.sh && chmod +x caddy_install.sh && bash caddy_install.sh`
 
@@ -101,7 +101,7 @@ RPC 密钥：随机生成，可使用选项`7. 修改 配置文件`自定义
 
 `wget -N --no-check-certificate https://www.moerats.com/usr/shell/Caddy/caddy_install.sh && chmod +x caddy_install.sh && bash caddy_install.sh`
 
-## 安装Caddy成功后，继续新建一个虚拟主机文件夹
+## 安装Caddy成功后，继续新建一个虚拟主机文件夹：
 `mkdir /usr/local/caddy/www`
 
 ## 使用IP进行访问：
@@ -144,11 +144,11 @@ gzip
 
 `wget -N --no-check-certificate "https://github.com/mayswind/AriaNg/releases/download/${Ver}/AriaNg-${Ver}.zip" && unzip AriaNg-${Ver}.zip && rm -rf AriaNg-${Ver}.zip`
  
-* 赋予虚拟主机文件夹权限
+* 赋予虚拟主机文件夹755权限：
 
 `chmod -R 755 /usr/local/caddy/www/`
 
-## 最后启动Caddy
+## 最后启动Caddy：
 `/etc/init.d/caddy start`
 
 ## Caddy其他命令：
