@@ -151,7 +151,7 @@ gzip
 ## 最后启动Caddy：
 `/etc/init.d/caddy start`
 
-## Caddy其他命令：
+## Caddy其他操作命令：
 启动：`/etc/init.d/caddy start`
 
 停止：`/etc/init.d/caddy stop`
