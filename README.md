@@ -161,6 +161,6 @@ gzip
 查看状态：`/etc/init.d/caddy status`
 
 ## Lisence
-moerats x doubi
+© Moerats x Doubi
 
 ## 本项目由个人整理！！！
