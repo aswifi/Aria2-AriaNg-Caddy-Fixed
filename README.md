@@ -123,9 +123,13 @@ timeouts none
 gzip
 }" > /usr/local/caddy/Caddyfile`
 
-## CentOS 系统：
+## 首先我们先安装解压缩依赖：
+* CentOS 系统：
+
 `yum install unzip -y`
-## Debian/Ubuntu 系统：
+
+* Debian/Ubuntu 系统：
+
 `apt-get install unzip -y`
 
 ## 然后继续：
