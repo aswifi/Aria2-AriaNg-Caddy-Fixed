@@ -1,4 +1,4 @@
-# Aria2 一键安装管理脚本 增强版(forked from P3TERX/aria2.sh) ＋ Install CaddyServer
+# Aria2 一键安装管理脚本 增强版(forked from P3TERX/aria2.sh) ＋ Install CaddyServer + AriaNg
 
 # 1.P3TERX/aria2.sh
 [![LICENSE](https://img.shields.io/github/license/P3TERX/aria2.sh?style=flat-square)](https://github.com/P3TERX/aria2.sh/blob/master/LICENSE)
@@ -132,7 +132,7 @@ gzip
 
 `apt-get install unzip -y`
 
-## 然后继续：
+## 然后继续（进入AriaNg安装步骤）：
 * 新建Aria2下载文件夹 并进入文件夹
 `mkdir /usr/local/caddy/www/Download && cd /usr/local/caddy/www`
 
